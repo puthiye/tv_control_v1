@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tv-control
+  namespace: apps
+  labels:
+    app: tv-control
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tv-control
+  template:
+    metadata:
+      labels:
+        app: tv-control
+    spec:
+      containers:
+        - name: tv-control
+          image: tv-control:latest
+          imagePullPolicy: IfNotPresent

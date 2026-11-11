@@ -131,6 +131,7 @@ def run_router_command(remote_command):
         "-o", "PreferredAuthentications=password,keyboard-interactive",
         "-o", "PubkeyAuthentication=no",
         "-o", "ConnectTimeout=10",
+        "-o", "StrictHostKeyChecking=accept-new",
         f"{OPENWRT_SSH_USER}@{OPENWRT_IP}",
         remote_command,
     ]
